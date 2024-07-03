@@ -1,0 +1,18 @@
+services:
+  app:
+    hostname: lab
+    build:
+      context: .
+      args:
+        USER: rat
+    volumes:
+      - ./data/:/lab/data/
+      - ./notebooks/:/lab/notebooks/
+      - ./scripts/:/lab/scripts/
+    ports:
+      - $JP_LOCAL_PORT:8888
+    environment:
+      - JP_AUTHENTICATED=$JP_AUTHENTICATED
+      - OPENAI_TOKEN=$OPENAI_TOKEN
+    tty: true
+    entrypoint: /lab/scripts/docker-entrypoint.sh

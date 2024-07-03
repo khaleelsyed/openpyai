@@ -1,0 +1,5 @@
+jupyterlab==4.2.3
+openai==1.35.9
+streamlit==1.36.0
+requests==2.32.3
+pip==24.1.1
