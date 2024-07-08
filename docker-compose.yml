@@ -9,8 +9,10 @@ services:
       - ./data/:/lab/data/
       - ./notebooks/:/lab/notebooks/
       - ./scripts/:/lab/scripts/
+      - ./src/:/lab/src/
     ports:
       - $JP_LOCAL_PORT:8888
+      - $STREAMLIT_LOCAL_PORT:8501
     environment:
       - JP_AUTHENTICATED=$JP_AUTHENTICATED
       - OPENAI_TOKEN=$OPENAI_TOKEN
